@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Left Column for Personal Information -->
+            <LinearLayout
+                android:id="@+id/personalInfoLayout"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/paymentInfoLayout"
+                app:layout_constraintHorizontal_weight="1">
+
+                <!-- Personal Information -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/personal_info"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <EditText
+                    android:id="@+id/firstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/fname"
+                    android:textColorHint="@color/black"
+                    android:background="@drawable/input_fields_rounded"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:id="@+id/lastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/lname"
+                    android:textColorHint="@color/black"
+                    android:background="@drawable/input_fields_rounded"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:id="@+id/emailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/email_add"
+                    android:textColorHint="@color/black"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/input_fields_rounded"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/phone"
+                    android:textColorHint="@color/black"
+                    android:inputType="phone"
+                    android:background="@drawable/input_fields_rounded"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:id="@+id/mailingAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/mail_ad"
+                    android:textColorHint="@color/black"
+                    android:inputType="textPostalAddress"
+                    android:background="@drawable/input_fields_rounded"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+            <!-- Right Column for Payment Information -->
+            <LinearLayout
+                android:id="@+id/paymentInfoLayout"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/personalInfoLayout"
+                app:layout_constraintHorizontal_weight="1">
+
+                <!-- Payment Information -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payment_info"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <RadioGroup
+                    android:id="@+id/paymentOptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <RadioButton
+                        android:id="@+id/paymentCreditCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="15sp"
+                        android:text="@string/credit"
+                        android:padding="8dp"/>
+
+                    <RadioButton
+                        android:id="@+id/paymentDebitCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="15sp"
+                        android:text="@string/debit"
+                        android:padding="8dp"/>
+                </RadioGroup>
+
+                <!-- Card Details (Initially Hidden) -->
+                <LinearLayout
+                    android:id="@+id/cardDetailsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginBottom="16dp">
+
+                    <EditText
+                        android:id="@+id/cardHolderName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/card_name"
+                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:background="@drawable/input_fields_rounded"
+                        android:padding="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <EditText
+                        android:id="@+id/cardNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/card_no"
+                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:inputType="number"
+                        android:background="@drawable/input_fields_rounded"
+                        android:padding="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <EditText
+                        android:id="@+id/cardCVV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/cvv"
+                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:inputType="numberPassword"
+                        android:background="@drawable/input_fields_rounded"
+                        android:padding="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <EditText
+                        android:id="@+id/cardExpiryDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:hint="@string/exp"
+                        android:textColorHint="@color/black"
+                        android:inputType="text"
+                        android:background="@drawable/input_fields_rounded"
+                        android:padding="10dp"
+                        android:layout_marginBottom="10dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Submit Button at the Bottom -->
+        <Button
+            android:id="@+id/submitOrderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_order"
+            android:fontFamily="@font/montserrat_semibold"
+            android:background="@drawable/ripple_effect"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</ScrollView>

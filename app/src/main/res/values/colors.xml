@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="custom_gray">#B0B0B0</color>
+    <color name="accent_color">#00A8E8</color>
+    <color name="custom_darker_gray">#888888</color>
+
+    <color name="backgroundColor">#1B1B1C</color> <!-- Light background -->
+    <color name="primaryColor">#6200EE</color> <!-- Primary color -->
+    <color name="primaryLightColor">#BB86FC</color> <!-- Light variant -->
+    <color name="primaryDarkColor">#3700B3</color> <!-- Dark variant -->
+
+</resources>
